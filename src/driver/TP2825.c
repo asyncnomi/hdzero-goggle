@@ -53,6 +53,14 @@ void TP2825_Config(int ch_sel, int is_pal) // ch_sel: 0=AV in; 1=Module bay
         I2C_Write(ADDR_TP2825, 0x0E, 0x00);
         I2C_Write(ADDR_TP2825, 0x0F, 0x00);
 
+        // Revert back to default
+        I2C_Write(ADDR_TP2825, 0x10, 0x00);
+        I2C_Write(ADDR_TP2825, 0x11, 0x00);
+        I2C_Write(ADDR_TP2825, 0x12, 0x00);
+        I2C_Write(ADDR_TP2825, 0x13, 0x00);
+        I2C_Write(ADDR_TP2825, 0x14, 0x00);
+        I2C_Write(ADDR_TP2825, 0x15, 0x00);
+
         // I2C_Write(ADDR_TP2825, 0x15, 0x13);
         I2C_Write(ADDR_TP2825, 0x16, 0x4A);
         I2C_Write(ADDR_TP2825, 0x17, 0xC0);
@@ -61,6 +69,10 @@ void TP2825_Config(int ch_sel, int is_pal) // ch_sel: 0=AV in; 1=Module bay
         I2C_Write(ADDR_TP2825, 0x1A, 0x17);
         I2C_Write(ADDR_TP2825, 0x1C, 0x09);
         I2C_Write(ADDR_TP2825, 0x1D, 0x48);
+
+        // Revert back to default
+        I2C_Write(ADDR_TP2825, 0x1E, 0x00);
+        I2C_Write(ADDR_TP2825, 0x1F, 0x00);
 
         I2C_Write(ADDR_TP2825, 0x20, g_hw_stat.IS_TP2825_L ? 0x40 : 0xB0);
         I2C_Write(ADDR_TP2825, 0x21, 0x86);
@@ -112,6 +124,22 @@ void TP2825_Config(int ch_sel, int is_pal) // ch_sel: 0=AV in; 1=Module bay
         I2C_Write(ADDR_TP2825, 0x4D, 0x01);
         I2C_Write(ADDR_TP2825, 0x4E, 0x37);
         I2C_Write(ADDR_TP2825, 0x4F, 0x00);
+
+        // Revert back to default
+        I2C_Write(ADDR_TP2825, 0xB5, 0x00);
+        I2C_Write(ADDR_TP2825, 0xB8, 0x00);
+        I2C_Write(ADDR_TP2825, 0xBA, 0x00);
+        I2C_Write(ADDR_TP2825, 0xF3, 0x00);
+        I2C_Write(ADDR_TP2825, 0xF4, 0x00);
+        I2C_Write(ADDR_TP2825, 0xF5, 0x00);
+        I2C_Write(ADDR_TP2825, 0xF6, 0x00);
+        I2C_Write(ADDR_TP2825, 0xF7, 0x00);
+        I2C_Write(ADDR_TP2825, 0xF8, 0x00);
+        I2C_Write(ADDR_TP2825, 0xF9, 0x00);
+        I2C_Write(ADDR_TP2825, 0xFA, 0x00);
+        I2C_Write(ADDR_TP2825, 0xFB, 0x00);
+        I2C_Write(ADDR_TP2825, 0xFC, 0x00);
+        I2C_Write(ADDR_TP2825, 0xFD, 0x00);
     } else {
         I2C_Write(ADDR_TP2825, 0x02, 0xCF);
         I2C_Write(ADDR_TP2825, 0x06, 0x32);
